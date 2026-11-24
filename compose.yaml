@@ -1,0 +1,8 @@
+services:
+  grafcast:
+    build: .
+    image: grafcast:local
+    restart: unless-stopped
+    env_file: .env
+    # Chromium needs more shared memory than Docker's 64 MB default
+    shm_size: 1gb
