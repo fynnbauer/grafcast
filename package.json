@@ -1,0 +1,34 @@
+{
+  "name": "grafcast",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Discord bot that streams a Grafana playlist in kiosk mode into a voice channel",
+  "license": "MIT",
+  "author": "Fynn Bauer",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
+    "build": "tsc",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write ."
+  },
+  "packageManager": "pnpm@12.23.0",
+  "dependencies": {
+    "@dank074/discord-video-stream": "^7.0.0",
+    "@lng2004/discord.js-selfbot-v13": "^3.7.2",
+    "discord.js": "^14.28.1",
+    "puppeteer": "^25.18.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.8",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

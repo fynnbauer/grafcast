@@ -1,0 +1,7 @@
+allowBuilds:
+  "@lng2004/node-datachannel": true
+  esbuild: true
+  node-av: true
+  puppeteer: true
+  sharp: true
+  zeromq: true
