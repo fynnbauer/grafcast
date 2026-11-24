@@ -85,37 +85,37 @@ pnpm build && pnpm start
 
 ## Usage
 
-| Command                       | Description                                                   |
-| ----------------------------- | ------------------------------------------------------------- |
-| `/grafcast start [channel]`   | Start streaming into `channel`, or the voice channel you're in |
-| `/grafcast stop`              | Stop the stream and leave the channel                         |
-| `/grafcast status`            | Show where and since when it is streaming                     |
+| Command                     | Description                                                    |
+| --------------------------- | -------------------------------------------------------------- |
+| `/grafcast start [channel]` | Start streaming into `channel`, or the voice channel you're in |
+| `/grafcast stop`            | Stop the stream and leave the channel                          |
+| `/grafcast status`          | Show where and since when it is streaming                      |
 
 Set `DISCORD_ALLOWED_ROLE_IDS` to limit who can use the commands. You can
-also restrict them under *Server Settings → Integrations*.
+also restrict them under _Server Settings → Integrations_.
 
 ## Configuration
 
 All settings are environment variables. See [`.env.example`](.env.example).
 
-| Variable                   | Default     | Description                                       |
-| -------------------------- | ----------- | ------------------------------------------------- |
-| `DISCORD_BOT_TOKEN`        | –           | Control bot token                                 |
-| `DISCORD_GUILD_ID`         | –           | Server to register slash commands in              |
-| `DISCORD_ALLOWED_ROLE_IDS` | *(empty)*   | Comma-separated role IDs allowed to use commands  |
-| `STREAMER_TOKEN`           | –           | User token of the streamer account                |
-| `GRAFANA_URL`              | –           | Base URL of your Grafana instance                 |
-| `GRAFANA_PLAYLIST_UID`     | –           | Playlist to play                                  |
-| `GRAFANA_AUTH`             | `anonymous` | `anonymous`, `token` or `login`                   |
-| `GRAFANA_TOKEN`            | –           | Service account token (`token` mode)              |
-| `GRAFANA_USERNAME` / `GRAFANA_PASSWORD` | – | Credentials (`login` mode)                   |
-| `GRAFANA_THEME`            | *(Grafana default)* | `dark` or `light`                         |
-| `STREAM_WIDTH` / `STREAM_HEIGHT` | `1920` / `1080` | Browser viewport and output resolution    |
-| `STREAM_FPS`               | `15`        | Output frame rate                                 |
-| `STREAM_BITRATE_KBPS`      | `4000`      | Average video bitrate                             |
-| `STREAM_CODEC`             | `H264`      | `H264` or `H265`                                  |
-| `CHROME_EXECUTABLE_PATH`   | *(bundled)* | Use a system Chrome/Chromium                      |
-| `LOG_LEVEL`                | `info`      | `debug`, `info`, `warn` or `error`                |
+| Variable                                | Default             | Description                                      |
+| --------------------------------------- | ------------------- | ------------------------------------------------ |
+| `DISCORD_BOT_TOKEN`                     | –                   | Control bot token                                |
+| `DISCORD_GUILD_ID`                      | –                   | Server to register slash commands in             |
+| `DISCORD_ALLOWED_ROLE_IDS`              | _(empty)_           | Comma-separated role IDs allowed to use commands |
+| `STREAMER_TOKEN`                        | –                   | User token of the streamer account               |
+| `GRAFANA_URL`                           | –                   | Base URL of your Grafana instance                |
+| `GRAFANA_PLAYLIST_UID`                  | –                   | Playlist to play                                 |
+| `GRAFANA_AUTH`                          | `anonymous`         | `anonymous`, `token` or `login`                  |
+| `GRAFANA_TOKEN`                         | –                   | Service account token (`token` mode)             |
+| `GRAFANA_USERNAME` / `GRAFANA_PASSWORD` | –                   | Credentials (`login` mode)                       |
+| `GRAFANA_THEME`                         | _(Grafana default)_ | `dark` or `light`                                |
+| `STREAM_WIDTH` / `STREAM_HEIGHT`        | `1920` / `1080`     | Browser viewport and output resolution           |
+| `STREAM_FPS`                            | `15`                | Output frame rate                                |
+| `STREAM_BITRATE_KBPS`                   | `4000`              | Average video bitrate                            |
+| `STREAM_CODEC`                          | `H264`              | `H264` or `H265`                                 |
+| `CHROME_EXECUTABLE_PATH`                | _(bundled)_         | Use a system Chrome/Chromium                     |
+| `LOG_LEVEL`                             | `info`              | `debug`, `info`, `warn` or `error`               |
 
 Dashboards are mostly static, so 10 to 15 FPS at 2 to 4 Mbps is usually plenty.
 
