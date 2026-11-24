@@ -36,7 +36,8 @@ export class KioskBrowser {
   get playlistUrl(): string {
     const { grafanaUrl, playlistUid, theme } = this.options;
     const url = new URL(`${grafanaUrl}/playlists/play/${encodeURIComponent(playlistUid)}`);
-    url.searchParams.set("kiosk", "");
+    // `?kiosk=` (empty value) is ignored by recent Grafana versions.
+    url.searchParams.set("kiosk", "true");
     if (theme) url.searchParams.set("theme", theme);
     return url.toString();
   }
