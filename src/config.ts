@@ -107,7 +107,9 @@ function toGrafanaAuth(env: Env): GrafanaAuth {
 }
 
 export function loadConfig(source: NodeJS.ProcessEnv = process.env): Config {
-  const result = schema.safeParse(source);
+  // Treat `KEY=` (as left behind by copying .env.example) the same as unset.
+  const defined = Object.fromEntries(Object.entries(source).filter(([, value]) => value?.trim()));
+  const result = schema.safeParse(defined);
   if (!result.success) {
     const issues = result.error.issues
       .map((issue) => `  - ${issue.path.join(".") || "(root)"}: ${issue.message}`)
